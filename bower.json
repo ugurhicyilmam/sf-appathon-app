@@ -1,0 +1,24 @@
+{
+  "name": "sf-appathon-app",
+  "description": "",
+  "main": "src/index.html",
+  "authors": [
+    "ugur.hicyilmam <ugurhicyilmam@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "src/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "./bower_components"
+  ],
+  "resolutions": {
+    "webcomponentsjs": "^v1.0.2"
+  },
+  "dependencies": {
+    "px-gauge": "^2.1.3"
+  }
+}
