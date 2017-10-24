@@ -15,7 +15,7 @@
 							"query": {
 								"uri": "https://time-series-store-predix.run.aws-usw02-pr.ice.predix.io/v1/datapoints",
 								"zone-http-header-name": "Predix-Zone-Id",
-								"zone-http-header-value": "f7b1825e-a915-4a45-b9db-ed925cdb1419"
+								"zone-http-header-value": "11bd533d-7b0b-48e2-af2c-366d7225b770"
 							}
 						}
 					}
@@ -25,7 +25,7 @@
 						"name": "uaa-service",
 						"label": "predix-uaa",
 						"credentials": {
-							"uri": "https://bosch-demo.predix-uaa.run.aws-usw02-pr.ice.predix.io"
+							"uri": "https://5c07bb43-0e6a-4638-be7b-dc39b413d835.predix-uaa.run.aws-usw02-pr.ice.predix.io"
 						}
 					}
 				],
