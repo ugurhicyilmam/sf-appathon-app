@@ -1,0 +1,136 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        Park-E
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/#/driver-history">History</a></li>
+        <li><a>Bookings</a></li>
+        <li><a>Settings</a></li>
+        <li><a>Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row" style="margin-bottom: 25px;">
+    <div class="col-md-12">
+      <px-view-header
+        title="PKL-12653"
+      >
+        <div
+          id='left'
+          class='actionable'>
+          <a href="#/park-manager">
+            <px-icon
+              icon='px-nav:back'>
+            </px-icon>
+            Back
+          </a>
+        </div>
+      </px-view-header>
+      <hr style="height:1px;border:none;color:#333;background-color:#333; opacity: .5;"/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4" style="text-align: center; border-right: 1px solid;">
+      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+        <px-gauge
+          value="30"
+          min="0"
+          max="100"
+          bar-width="0"
+          unit="unit"
+          error='[[0,12],[79,100]]'
+          abnormal='[[12,32],[68,79]]'
+          anomaly='[[32,45],[54,68]]'
+          normal='[[45,54]]'>
+        </px-gauge>
+
+      </div>
+    </div>
+    <div class="col-md-4" style="text-align: center; border-right: 1px solid;">
+      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+        <px-gauge
+          value="30"
+          min="0"
+          max="100"
+          bar-width="0"
+          unit="unit"
+          error='[[0,12],[79,100]]'
+          abnormal='[[12,32],[68,79]]'
+          anomaly='[[32,45],[54,68]]'
+          normal='[[45,54]]'>
+        </px-gauge>
+      </div>
+    </div>
+    <div class="col-md-4" style=" text-align: center;">
+      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+        <px-gauge
+          value="30"
+          min="0"
+          max="100"
+          bar-width="0"
+          unit="unit"
+          error='[[0,12],[79,100]]'
+          abnormal='[[12,32],[68,79]]'
+          anomaly='[[32,45],[54,68]]'
+          normal='[[45,54]]'>
+        </px-gauge>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div
+        style=" width:100%; height:300px; display:flex; margin-top: 150px;">
+        <px-map
+          lat="37.7673626"
+          lng="-121.9595048"
+          flex-to-size
+          fit-to-markers
+        >
+          <px-map-control-zoom position="topright"></px-map-control-zoom>
+          <px-map-marker-static
+            lat="37.7673626"
+            lng="-121.9595048"
+            type="warning">
+            <px-map-popup-data title="PKL-1619236" data='{"Price" : "5$/Hour", "Status": "BROKEN" }'>
+            </px-map-popup-data>
+          </px-map-marker-static>
+          <px-map-tile-layer
+            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'>
+          </px-map-tile-layer>
+        </px-map>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-12">
+      <span style="margin-left: 10px; font-size: 30px; ">Events</span>
+      <hr>
+    </div>
+    <div class="col-md-12">
+      <px-table-view rows-size="regular" selected-item='null'>
+        <px-table-row title='Item 1'></px-table-row>
+        <px-table-row title='Item 2'></px-table-row>
+        <px-table-row title='Item 3'></px-table-row>
+        <px-table-row title='Item 4'></px-table-row>
+        <px-table-row title='Item 5'></px-table-row>
+      </px-table-view>
+      
+    </div>
+  </div>
+</div>
+
