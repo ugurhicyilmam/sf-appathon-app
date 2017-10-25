@@ -31,29 +31,11 @@
         <px-map
           flex-to-size
           fit-to-markers
-          >
+        >
           <px-map-control-zoom position="topright"></px-map-control-zoom>
-          <px-map-marker-static
-            lat="37.7673626"
-            lng="-121.9595048"
-            type="warning">
-            <px-map-popup-data title="PKL-1619236" data='{ "Compatible" : "YES", "Price" : "5$/Hour" }'>
-            </px-map-popup-data>
-          </px-map-marker-static>
-          <px-map-marker-static
-            lat="37.9673626"
-            lng="-120.9595048"
-            type="info">
-          </px-map-marker-static>
-          <px-map-marker-static
-            lat="37.1673626"
-            lng="-121.9595048"
-            type="warning">
-          </px-map-marker-static>
-          <px-map-marker-static
-            lat="35.7673626"
-            lng="-119.9595048"
-            type="info">
+          <px-map-marker-static [attr.lat]="marker.lat|intToStr" [attr.lng]="marker.lng|intToStr"
+                                *ngFor="let marker of markers">
+
           </px-map-marker-static>
           <px-map-tile-layer
             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'>

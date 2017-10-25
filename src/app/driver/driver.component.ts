@@ -9,7 +9,7 @@ declare const $: any;
 })
 export class DriverComponent implements OnInit, AfterViewInit {
 
-  locations: any[];
+  markers: any[];
 
   ngAfterViewInit(): void {
 
@@ -28,7 +28,30 @@ export class DriverComponent implements OnInit, AfterViewInit {
   }
 
   constructor(private http: Http) {
-    this.http.get('')
+    this.http.get('assets/parking/locations.json').subscribe((response) => {
+      const locations = response.json().content;
+      this.markers = this.createMarkers(locations);
+      console.log(this.markers);
+    });
+  }
+
+
+  createMarkers(locations) {
+    const markers = [];
+    for (let i = 0; i < locations.length; i++) {
+      const coordinates = this.extractLocations(locations[i].coordinates);
+      const marker = {
+        lat: coordinates[0],
+        lng: coordinates[1]
+      };
+      markers.push(marker);
+    }
+    return markers;
+  }
+
+  extractLocations(coordinate) {
+    const coordinates = coordinate.split(',')[0].split(':');
+    return [coordinates[0], coordinates[1]];
   }
 
   ngOnInit() {

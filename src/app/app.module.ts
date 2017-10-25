@@ -12,6 +12,8 @@ import { ParkManagerComponent } from './park-manager/park-manager.component';
 import { DriverHistoryComponent } from './driver-history/driver-history.component';
 import { ParkManagerInspectComponent } from './park-manager-inspect/park-manager-inspect.component';
 import {ArrayToStringPipe} from './pipes/arrayToString.pipe';
+import {IntToStrPipe} from './pipes/intToStr.pipe';
+import { HomeOwnerComponent } from './home-owner/home-owner.component';
 
 const routes = [
   {
@@ -33,6 +35,10 @@ const routes = [
   {
     path: 'resource-manager',
     component: ResourceManagerComponent
+  },
+  {
+    path: 'home-owner',
+    component: HomeOwnerComponent
   }
 ];
 
@@ -44,7 +50,9 @@ const routes = [
     ParkManagerComponent,
     DriverHistoryComponent,
     ParkManagerInspectComponent,
-    ArrayToStringPipe
+    ArrayToStringPipe,
+    IntToStrPipe,
+    HomeOwnerComponent
   ],
   imports: [
     BrowserModule,
