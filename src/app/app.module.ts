@@ -9,11 +9,16 @@ import {RouterModule} from '@angular/router';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { ResourceManagerComponent } from './resource-manager/resource-manager.component';
 import { ParkManagerComponent } from './park-manager/park-manager.component';
+import { DriverHistoryComponent } from './driver-history/driver-history.component';
 
 const routes = [
   {
     path: 'driver',
     component: DriverComponent
+  },
+  {
+    path: 'driver-history',
+    component: DriverHistoryComponent
   },
   {
     path: 'park-manager',
@@ -30,7 +35,8 @@ const routes = [
     AppComponent,
     DriverComponent,
     ResourceManagerComponent,
-    ParkManagerComponent
+    ParkManagerComponent,
+    DriverHistoryComponent
   ],
   imports: [
     BrowserModule,
