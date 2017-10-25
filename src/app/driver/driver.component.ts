@@ -42,7 +42,8 @@ export class DriverComponent implements OnInit, AfterViewInit {
       const coordinates = this.extractLocations(locations[i].coordinates);
       const marker = {
         lat: coordinates[0],
-        lng: coordinates[1]
+        lng: coordinates[1],
+        status: this.calculateStatus(locations[i])
       };
       markers.push(marker);
     }
@@ -55,5 +56,14 @@ export class DriverComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+  }
+
+  private calculateStatus(location: any) {
+    if (location['pkInTimeStamp'] && location['pkOutTimeStamp']) {
+      if (parseFloat(location['pkInTimeStamp']) > parseFloat(location['pkOutTimeStamp'])) {
+        return 'TAKEN';
+      }
+    }
+    return 'EMPTY';
   }
 }
