@@ -1,9 +1,9 @@
 {
 	"development": {
-		"clientId": "timeseries_client_readonly",
-		"base64ClientCredential": "dGltZXNlcmllc19jbGllbnRfcmVhZG9ubHk6dGltZXNlcmllcy1jbGllbnQtcmVhZG9ubHktc2VjcmV0",
-		"restClientId": "rest_client",
-		"base64RestClientCredential": "cmVzdF9jbGllbnQ6cmVzdC1jbGllbnQtc2VjcmV0",
+		"clientId": "app_client_id",
+		"base64ClientCredential": "YXBwX2NsaWVudF9pZDpzZWNyZXQ=",
+		"restClientId": "app_user_1#",
+		"base64RestClientCredential": "YXBwX3VzZXJfMSM6YXBwX3VzZXJfMSM=",
 		"serverPort": 5000,
 		"vcap": {
 			"services": {
