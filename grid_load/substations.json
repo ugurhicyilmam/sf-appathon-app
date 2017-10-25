@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Knockroe",
+    "locations": [
+      "LOCATION-325",
+      "LOCATION-324",
+      "LOCATION-323",
+      "LOCATION-313",
+      "LOCATION-307",
+      "LOCATION-306",
+      "LOCATION-297"
+    ]
+  },
+  {
+    "name": "Letterkenny_Dromore",
+    "locations": [
+      "LOCATION-290",
+      "LOCATION-236",
+      "LOCATION-220",
+      "LOCATION-215",
+      "LOCATION-201",
+      "LOCATION-198",
+      "LOCATION-190"
+    ]
+  },
+  {
+    "name": "Malahide_Castle",
+    "locations": [
+      "LOCATION-189",
+      "LOCATION-188",
+      "LOCATION-184",
+      "LOCATION-160",
+      "LOCATION-150",
+      "LOCATION-140"
+    ]
+  },
+  {
+    "name": "Mullingar",
+    "locations": [
+      "LOCATION-115",
+      "LOCATION-114",
+      "LOCATION-282",
+      "LOCATION-281",
+      "LOCATION-276",
+      "LOCATION-273"
+    ]
+  },
+  {
+    "name": "Shannon_Airport_Area",
+    "locations": [
+      "LOCATION-272",
+      "LOCATION-212",
+      "LOCATION-213",
+      "LOCATION-233",
+      "LOCATION-229",
+      "LOCATION-225"
+    ]
+  }
+]
