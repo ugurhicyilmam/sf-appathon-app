@@ -19,6 +19,8 @@
     "webcomponentsjs": "^v1.0.2"
   },
   "dependencies": {
-    "px-gauge": "^2.1.3"
+    "px-gauge": "^2.1.3",
+    "px-map": "^2.1.5",
+    "px-key-value-pair": "^1.1.2"
   }
 }
