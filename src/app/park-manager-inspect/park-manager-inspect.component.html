@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -14,10 +14,11 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/#/driver-history">History</a></li>
-        <li><a>Bookings</a></li>
-        <li><a>Settings</a></li>
-        <li><a>Profile</a></li>
+        <li><a href="/#/driver">Driver Bookings</a></li>
+        <li><a href="/#/driver-history">Driver History</a></li>
+        <li><a href="/#/park-manager">Park Manager</a></li>
+        <li><a href="/#/resource-manager">Resource Manager</a></li>
+        <li><a href="/#/home-owner">Home Owner</a></li>
       </ul>
     </div>
   </div>
@@ -44,48 +45,52 @@
   </div>
   <div class="row">
     <div class="col-md-4" style="text-align: center; border-right: 1px solid;">
-      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+      <px-key-value-pair value="Efficiency" size="delta"></px-key-value-pair>
+      <div style="width: 300px; height: 160px;   margin: 0 auto;">
         <px-gauge
-          value="30"
+          value="32"
           min="0"
           max="100"
           bar-width="0"
-          unit="unit"
-          error='[[0,12],[79,100]]'
-          abnormal='[[12,32],[68,79]]'
-          anomaly='[[32,45],[54,68]]'
-          normal='[[45,54]]'>
+          unit="%"
+          error='[[0,12]]'
+          abnormal='[[12,32]]'
+          anomaly='[[32,45]]'
+          normal='[[45,100]]'>
         </px-gauge>
 
       </div>
     </div>
     <div class="col-md-4" style="text-align: center; border-right: 1px solid;">
-      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+      <px-key-value-pair value="Decarbonization" size="delta"></px-key-value-pair>
+      <div style="width: 300px; height: 160px;   margin: 0 auto;">
         <px-gauge
-          value="30"
+          value="21"
           min="0"
           max="100"
           bar-width="0"
-          unit="unit"
-          error='[[0,12],[79,100]]'
-          abnormal='[[12,32],[68,79]]'
-          anomaly='[[32,45],[54,68]]'
-          normal='[[45,54]]'>
+          unit="%"
+          error='[[0,12]]'
+          abnormal='[[12,32]]'
+          anomaly='[[32,45]]'
+          normal='[[45,100]]'>
         </px-gauge>
+
       </div>
     </div>
     <div class="col-md-4" style=" text-align: center;">
-      <div style="width: 330px; height: 170px;   margin: 0 auto;">
+      <px-key-value-pair value="Health" size="delta"></px-key-value-pair>
+      <div style="width: 300px; height: 160px;   margin: 0 auto;">
         <px-gauge
-          value="30"
+          value="95"
           min="0"
           max="100"
           bar-width="0"
-          unit="unit"
-          error='[[0,12],[79,100]]'
-          abnormal='[[12,32],[68,79]]'
-          anomaly='[[32,45],[54,68]]'
-          normal='[[45,54]]'>
+          unit="%"
+          error='[[0,12]]'
+          abnormal='[[12,32]]'
+          anomaly='[[32,45]]'
+          normal='[[45,100]]'>
         </px-gauge>
 
       </div>
@@ -123,11 +128,11 @@
     </div>
     <div class="col-md-12">
       <px-table-view rows-size="regular" selected-item='null'>
-        <px-table-row title='Item 1'></px-table-row>
-        <px-table-row title='Item 2'></px-table-row>
-        <px-table-row title='Item 3'></px-table-row>
-        <px-table-row title='Item 4'></px-table-row>
-        <px-table-row title='Item 5'></px-table-row>
+        <px-table-row body="Park In" label-right="5 minutes ago"></px-table-row>
+        <px-table-row body="Park Out" label-right="10 minutes ago"></px-table-row>
+        <px-table-row body="Park In" label-right="1 hour ago"></px-table-row>
+        <px-table-row body="Park Out" label-right="1 hour ago"></px-table-row>
+        <px-table-row body="Park In" label-right="3 hours ago"></px-table-row>
       </px-table-view>
 
     </div>

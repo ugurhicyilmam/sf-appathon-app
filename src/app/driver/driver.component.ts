@@ -28,7 +28,7 @@ export class DriverComponent implements OnInit, AfterViewInit {
   }
 
   constructor(private http: Http) {
-    this.http.get('assets/parking/locations.json').subscribe((response) => {
+    this.http.get('https://mmsanfranciscoteam-web-api.run.aws-usw02-pr.ice.predix.io/api/Other').subscribe((response) => {
       const locations = response.json().content;
       this.markers = this.createMarkers(locations);
       console.log(this.markers);
@@ -42,7 +42,8 @@ export class DriverComponent implements OnInit, AfterViewInit {
       const coordinates = this.extractLocations(locations[i].coordinates);
       const marker = {
         lat: coordinates[0],
-        lng: coordinates[1]
+        lng: coordinates[1],
+        status: this.calculateStatus(locations[i])
       };
       markers.push(marker);
     }
@@ -55,5 +56,14 @@ export class DriverComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+  }
+
+  private calculateStatus(location: any) {
+    if (location['pkInTimeStamp'] && location['pkOutTimeStamp']) {
+      if (parseFloat(location['pkInTimeStamp']) > parseFloat(location['pkOutTimeStamp'])) {
+        return 'TAKEN';
+      }
+    }
+    return 'EMPTY';
   }
 }
