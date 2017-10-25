@@ -36,33 +36,44 @@
 </nav>
 <div class="container" style="margin-top: 20px; padding: 50px;">
   <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
-    <div class="col-md-4" style="text-align:right">
-      <px-key-value-pair
-        key="Lorem Ipsum"
-        value="12345"
-        uom="units"
-        size="alpha">
-      </px-key-value-pair>
+    <div class="col-md-6" style="text-align:left">
+      <px-kpi spark-type="line" title="Total" value="40.958" uom="MW" status-icon="px-nav:up"
+              status-color="green"
+              status-label="12%"
+              spark-data='[{"x":1397102460000,"y":0.572332},{"x":1397139660000,"y":0.5635},{"x":1397177400000,"y":0.564052},{"x":1397228040000,"y":0.55499},
+              {"x":1397248260000,"y":0.536015},{"x":1397291280000,"y":0.508162},{"x":1397318100000,"y":0.486105},{"x":1397342100000,"y":0.472075},
+              {"x":1397390820000,"y":0.472075},{"x":1397408100000,"y":0.455423},{"x":1397458800000,"y":0.455423},{"x":1397522940000,"y":0.551559}]'></px-kpi>
+            </div>
+  <div class="col-md-6" style="text-align:left">
+      <px-kpi spark-type="line" title="Solar" value="2.042" uom="MW" status-icon="px-nav:up"
+                      status-color="green"
+                      status-label="3%"
+                      spark-data='[{"x":1397102460000,"y":0.0},{"x":1397139660000,"y":0.0},{"x":1397177400000,"y":0.03},{"x":1397228040000,"y":0.24},
+                      {"x":1397248260000,"y":0.3},{"x":1397291280000,"y":0.3},{"x":1397318100000,"y":0.18},{"x":1397342100000,"y":0.0},
+                      {"x":1397390820000,"y":0.21},{"x":1397408100000,"y":0.0},{"x":1397458800000,"y":0.0},{"x":1397522940000,"y":0.1}]'></px-kpi>
     </div>
-    <div class="col-md-4" style="text-align:center">
-      <px-key-value-pair
-        key="Lorem Ipsum"
-        value="12345"
-        uom="units"
-        size="alpha">
-      </px-key-value-pair>
-    </div>
-    <div class="col-md-4" style="text-align:left">
-      <px-key-value-pair
-        key="Lorem Ipsum"
-        value="12345"
-        uom="units"
-        size="alpha">
-      </px-key-value-pair>
+  </div>
+  <div class="row" style="margin-top: 30px; margin-bottom: 30px;">
+    <div class="col-md-6" style="text-align:left">
+      <px-kpi spark-type="line" title="Wind" value="10.649" uom="MW" status-icon="px-nav:down"
+              status-color="red"
+              status-label="3%"
+              spark-data='[{"x":1397102460000,"y":0.14063166},{"x":1397139660000,"y":0.13773136},{"x":1397177400000,"y":0.1340417},{"x":1397228040000,"y":0.12867166},
+              {"x":1397248260000,"y":0.12275146},{"x":1397291280000,"y":0.11836214},{"x":1397318100000,"y":0.11354824},{"x":1397342100000,"y":0.11354824},
+              {"x":1397390820000,"y":0.11080342},{"x":1397408100000,"y":0.1087164},{"x":1397458800000,"y":0.1109888},{"x":1397522940000,"y":0.1103609}]'></px-kpi>
+            </div>
+  <div class="col-md-6" style="text-align:left">
+      <px-kpi spark-type="line" title="Gas" value="28.269" uom="MW" status-icon="px-nav:down"
+                      status-color="green"
+                      status-label="1.3%"
+                      spark-data='[{"x":1397102460000,"y":0.40425904},{"x":1397139660000,"y":0.40299956},{"x":1397177400000,"y":0.37025934},{"x":1397228040000,"y":0.15200464},
+                      {"x":1397248260000,"y":0.0815033},{"x":1397291280000,"y":0.06621934},{"x":1397318100000,"y":0.16936954},{"x":1397342100000,"y":0.33687686},
+                      {"x":1397390820000,"y":0.11317576},{"x":1397408100000,"y":0.32317576},{"x":1397458800000,"y":0.31536358},{"x":1397522940000,"y":0.31536358}]'></px-kpi>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
+      <h2>Supply History</h2>
       <px-vis-timeseries
         debounce-resize-timing="250"
         width="700"
@@ -73,22 +84,28 @@
         tooltip-config='{}'
         register-config='{"type":"horizontal"}'
         selection-type="xy"
-        [attr.chart-data]="chartData|arrayToString"
-        series-config='{"y0":{"name":"y0","x":"timeStamp","y":"y0","yAxisUnit":"F","axis":{"id":"axis1","side":"left","number":"1"}},"y1":{"name":"y1","x":"timeStamp","y":"y1","yAxisUnit":"Hz","axis":{"id":"axis2","side":"right","number":"1"}},"y2":{"name":"y2","x":"timeStamp","y":"y2","yAxisUnit":"C","axis":{"id":"axis3","side":"left","number":"2"}},"y3":{"name":"y3","x":"timeStamp","y":"y3","yAxisUnit":"F","axis":{"id":"axis4","side":"right","number":"2"}}}'
+        [attr.chart-data]="supplyChartData|arrayToString"
+        series-config='{"y0":{"name":"Wind","x":"timeStamp","y":"y0","yAxisUnit":"MW"},
+        "y1":{"name":"Sun","x":"timeStamp","y":"y1","yAxisUnit":"MW"},
+        "y2":{"name":"Gas","x":"timeStamp","y":"y2","yAxisUnit":"MW"},
+        "y3":{"name":"Total","x":"timeStamp","y":"y3","yAxisUnit":"MW"}}'
         chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}'
-        event-data='[{"id":"123","time":1328714240000,"label":"Recalibrate"},{"id":"456","time":1347640960000,"label":"Fan start"},{"id":"789","time":1378125240000,"label":"Fan stop"},{"id":"333","time":1398956340000,"label":"Default"}]'
-        event-config='{"Recalibrate":{"color":"blue","icon":"px-fea:deployments","type":"fa","offset":[0,0],"lineColor":"red","lineWeight":0},"Fan start":{"color":"green","icon":"","type":"unicode","offset":[1,0]},"Fan stop":{"icon":"ge_logo.png","type":"image","offset":[0,-20],"size":"20"}}'
+        event-data='[{"id":"123","time":1462102200,"label":"No sun, no wind :("}]'
+        event-config='{"No sun, no wind :(":{"color":"red","icon":"px-fea:deployments","type":"fa","offset":[0,0],"lineColor":"red","lineWeight":0},"Fan start":{"color":"green","icon":"","type":"unicode","offset":[1,0]},"Fan stop":{"icon":"ge_logo.png","type":"image","offset":[0,-20],"size":"20"}}'
         threshold-data='[{"for":"y0","type":"max","value":15.4784},{"for":"y0","type":"min","value":9.6531}]'
         display-threshold-title
         threshold-config='{"max":{"color":"red","dashPattern":"5,0","title":"MAX","showThresholdBox":true,"displayTitle":true}}'
         x-axis-config='{"title":"Date"}'
-        y-axis-config='{"title":"Single","titleTruncation":false,"unit":"F","axis1":{"title":"Temperature","titleTruncation":false,"unit":"C"}}'
+        y-axis-config='{"title":"Power", "titleTruncation":false,"unit":"MW"}'
         dynamic-menu-config='[{"name":"Delete","action":"function(data) {var conf = {}, keys=Object.keys(this.seriesConfig); for(var i=0; i<keys.length;i++) { if(keys[i] !== data.additionalDetail.name) {conf[keys[i]] = this.seriesConfig[keys[i]];}} this.set(\"seriesConfig\", conf);}","eventName":"delete","icon":"px-vis:trash-series"},{"name":"Bring To Front","action":"function(data) {this.set(\"serieToRedrawOnTop\", data.additionalDetail.name);}","eventName":"bring-to-front","icon":"px-vis:bring-to-front"}]'
         toolbar-config='{"config":{"advancedZoom":true,"pan":true,"tooltip":true,"logHover":{"buttonGroup":2,"tooltipLabel":"The submenu item of this menu will define custom mouse interaction","icon":"px-nav:notification","subConfig":{"customClick":{"icon":"px-nav:expand","buttonGroup":3,"tooltipLabel":"define some custom mouse interactions on chart","eventName":"my-custom-click","actionConfig":{"mousedown":"function(mousePos) { console.log(\"custom click on chart. Context is the chart. Mouse pos is available: \" + JSON.stringify(mousePos))}","mouseup":"function(mousePos) { console.log(\"custom action on mouse up the chart \" + JSON.stringify(mousePos));}","mouseout":"function(mousePos) { console.log(\"custom action on mouse out the chart \" + JSON.stringify(mousePos));}","mousemove":"function(mousePos) { console.log(\"custom action on hovering the chart \");}"}},"customClick2":{"buttonGroup":3,"icon":"px-nav:collapse","tooltipLabel":"Remove all custom interactions","actionConfig":{"mousedown":null,"mouseup":null,"mouseout":null,"mousemove":null}}}}}}'
         navigator-config='{"xAxisConfig":{"tickFormat":"%b %d"}}'>
       </px-vis-timeseries>
     </div>
-    <div class="col-md-6">
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <BR/><BR/><h2>Demand History</h2>
       <px-vis-timeseries
         debounce-resize-timing="250"
         width="700"
@@ -99,8 +116,13 @@
         tooltip-config='{}'
         register-config='{"type":"horizontal"}'
         selection-type="xy"
-        [attr.chart-data]="chartData|arrayToString"
-        series-config='{"y0":{"name":"y0","x":"timeStamp","y":"y0","yAxisUnit":"F","axis":{"id":"axis1","side":"left","number":"1"}},"y1":{"name":"y1","x":"timeStamp","y":"y1","yAxisUnit":"Hz","axis":{"id":"axis2","side":"right","number":"1"}},"y2":{"name":"y2","x":"timeStamp","y":"y2","yAxisUnit":"C","axis":{"id":"axis3","side":"left","number":"2"}},"y3":{"name":"y3","x":"timeStamp","y":"y3","yAxisUnit":"F","axis":{"id":"axis4","side":"right","number":"2"}}}'
+        [attr.chart-data]="demandChartData|arrayToString"
+        series-config='{"y0":{"name":"Malahide Castle","x":"timeStamp","y":"y0","yAxisUnit":"MW"},
+        "y1":{"name":"Letterkenny - Dromore","x":"timeStamp","y":"y1","yAxisUnit":"MW"},
+        "y2":{"name":"Monaghan (Knockroe)","x":"timeStamp","y":"y2","yAxisUnit":"MW"},
+        "y3":{"name":"Mullingar","x":"timeStamp","y":"y3","yAxisUnit":"MW"},
+        "y4":{"name":"Shannon Airport","x":"timeStamp","y":"y4","yAxisUnit":"MW"},
+        "y5":{"name":"Shannon Airport Area","x":"timeStamp","y":"y5","yAxisUnit":"MW"}}'
         chart-extents='{"x":["dynamic","dynamic"],"y":["dynamic","dynamic"]}'
         event-data='[{"id":"123","time":1328714240000,"label":"Recalibrate"},{"id":"456","time":1347640960000,"label":"Fan start"},{"id":"789","time":1378125240000,"label":"Fan stop"},{"id":"333","time":1398956340000,"label":"Default"}]'
         event-config='{"Recalibrate":{"color":"blue","icon":"px-fea:deployments","type":"fa","offset":[0,0],"lineColor":"red","lineWeight":0},"Fan start":{"color":"green","icon":"","type":"unicode","offset":[1,0]},"Fan stop":{"icon":"ge_logo.png","type":"image","offset":[0,-20],"size":"20"}}'
@@ -108,7 +130,7 @@
         display-threshold-title
         threshold-config='{"max":{"color":"red","dashPattern":"5,0","title":"MAX","showThresholdBox":true,"displayTitle":true}}'
         x-axis-config='{"title":"Date"}'
-        y-axis-config='{"title":"Single","titleTruncation":false,"unit":"F","axis1":{"title":"Temperature","titleTruncation":false,"unit":"C"}}'
+        y-axis-config='{"title":"Power", "titleTruncation":false,"unit":"MW"}'
         dynamic-menu-config='[{"name":"Delete","action":"function(data) {var conf = {}, keys=Object.keys(this.seriesConfig); for(var i=0; i<keys.length;i++) { if(keys[i] !== data.additionalDetail.name) {conf[keys[i]] = this.seriesConfig[keys[i]];}} this.set(\"seriesConfig\", conf);}","eventName":"delete","icon":"px-vis:trash-series"},{"name":"Bring To Front","action":"function(data) {this.set(\"serieToRedrawOnTop\", data.additionalDetail.name);}","eventName":"bring-to-front","icon":"px-vis:bring-to-front"}]'
         toolbar-config='{"config":{"advancedZoom":true,"pan":true,"tooltip":true,"logHover":{"buttonGroup":2,"tooltipLabel":"The submenu item of this menu will define custom mouse interaction","icon":"px-nav:notification","subConfig":{"customClick":{"icon":"px-nav:expand","buttonGroup":3,"tooltipLabel":"define some custom mouse interactions on chart","eventName":"my-custom-click","actionConfig":{"mousedown":"function(mousePos) { console.log(\"custom click on chart. Context is the chart. Mouse pos is available: \" + JSON.stringify(mousePos))}","mouseup":"function(mousePos) { console.log(\"custom action on mouse up the chart \" + JSON.stringify(mousePos));}","mouseout":"function(mousePos) { console.log(\"custom action on mouse out the chart \" + JSON.stringify(mousePos));}","mousemove":"function(mousePos) { console.log(\"custom action on hovering the chart \");}"}},"customClick2":{"buttonGroup":3,"icon":"px-nav:collapse","tooltipLabel":"Remove all custom interactions","actionConfig":{"mousedown":null,"mouseup":null,"mouseout":null,"mousemove":null}}}}}}'
         navigator-config='{"xAxisConfig":{"tickFormat":"%b %d"}}'>
