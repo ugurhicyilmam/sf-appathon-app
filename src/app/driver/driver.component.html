@@ -37,7 +37,6 @@
           <px-map-control-zoom position="topright"></px-map-control-zoom>
           <px-map-marker-static [attr.lat]="marker.lat|intToStr" [attr.lng]="marker.lng|intToStr"
                                 [attr.type]="(marker.status==='EMPTY') ? 'info': 'important'"
-                                [attr.px-map-icon-info-color]="'#ffffff'"
                                 *ngFor="let marker of markers">
 
           </px-map-marker-static>
