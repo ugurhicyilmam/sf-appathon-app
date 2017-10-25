@@ -28,20 +28,6 @@
 							"uri": "https://5c07bb43-0e6a-4638-be7b-dc39b413d835.predix-uaa.run.aws-usw02-pr.ice.predix.io"
 						}
 					}
-				],
-				"user-provided": [
-					{
-						"name": "analytics",
-						"credentials": {
-							"uri": "https://analytics-demo-bosch.run.aws-usw02-pr.ice.predix.io"
-						}
-					},
-					{
-						"name": "ppm-connector",
-						"credentials": {
-							"uri": "https://demo-ppm-connector.run.aws-usw02-pr.ice.predix.io/api"
-						}
-					}
 				]
 			}
 		}

@@ -54,13 +54,6 @@ var getCredentials = {
 		serverConfig.proxy.analytics = {
 			endpoint: credentials.uri
 		};
-	},
-	"ppm-connector": function (credentials) {
-		serverConfig.base64RestClientCredential = process.env.base64RestClientCredential;
-		serverConfig.restClientId = process.env.restClientId;
-		serverConfig.proxy["ppm-connector"] = {
-			endpoint: credentials.uri
-		};
 	}
 };
 

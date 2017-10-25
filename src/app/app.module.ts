@@ -37,7 +37,7 @@ const routes = [
     component: ResourceManagerComponent
   },
   {
-    path: 'home-owner',
+    path: '',
     component: HomeOwnerComponent
   }
 ];

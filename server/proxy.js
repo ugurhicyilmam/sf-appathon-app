@@ -216,19 +216,6 @@ function addRestClientTokenMiddleware(req, res, next) {
 	}
 }
 
-function filterMiddleware(req, res, next) {
-	var reqPath = url.parse(req.url).path;
-
-	if (reqPath.startsWith("/ppm-connector")) {
-		addRestClientTokenMiddleware(req, res, next);
-	} else {
-		addClientTokenMiddleware(req, res, next);
-	}
-}
-
-router.use("/", filterMiddleware);
-
-
 // Create the predix service routes
 setProxyRoutes();
 

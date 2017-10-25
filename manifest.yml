@@ -1,0 +1,16 @@
+---
+applications:
+  - name: sf-appathon-app
+    memory: 1024M
+    buildpack: nodejs_buildpack
+    command:  node server/app.js
+    path: dist
+    services:
+          - mmsanfranciscoteam-uaa
+env:
+    node_env: cloud
+    # Add these values for authentication in the cloud
+    clientId: app_client_id
+    base64ClientCredential: YXBwX2NsaWVudF9pZDpzZWNyZXQ=
+    restClientId: app_user_1
+    base64RestClientCredential: YXBwX3VzZXJfMSM6YXBwX3VzZXJfMSM=
