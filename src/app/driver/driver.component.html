@@ -40,6 +40,9 @@
                                 [attr.type]="(marker.status==='EMPTY') ? 'info': 'important'"
                                 *ngFor="let marker of markers">
 
+            <px-map-popup-data *ngIf="marker.status === 'EMPTY'" title="PKL-1619236"
+                               data='{"Price" : "5$/Hour", "Status": "BROKEN" }'>
+            </px-map-popup-data>
           </px-map-marker-static>
           <px-map-tile-layer
             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'>
